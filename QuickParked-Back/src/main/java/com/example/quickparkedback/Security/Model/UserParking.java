@@ -14,7 +14,9 @@ import javax.persistence.*;
 public class UserParking {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
+    @Column (length = 50)
     private String userName;
+    @Column (length = 50)
     private String passWord;
 }
