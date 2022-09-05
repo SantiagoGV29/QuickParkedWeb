@@ -15,9 +15,9 @@
   <form action="">
     <div class="form-group">
       <h6>Usuario</h6>
-      <input name="user" type="text" class="form-control" style="border-radius: 35px;">
+      <input [(ngModel)]="usuario.userName" name="user" type="text" class="form-control" style="border-radius: 35px;">
       <h6>Contraseña</h6>
-      <input name="pass" type="password" class="form-control password" style="border-radius: 35px;">
+      <input [(ngModel)]="usuario.password" name="pass" type="password" class="form-control password" style="border-radius: 35px;">
       <div class="input-group-addon">
         <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
       </div>
