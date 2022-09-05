@@ -10,10 +10,22 @@ import{FormsModule}from '@angular/forms';
 import{HttpClientModule}from '@angular/common/http'
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './components/login/login.component';
+import { InsertarCarroComponent } from './components/insertar-carro/insertar-carro.component';
+import { InfoUsuarioComponent } from './components/info-usuario/info-usuario.component';
+import { TablaVehiculosComponent } from './components/tabla-vehiculos/tabla-vehiculos.component';
+import { PagoComponent } from './components/pago/pago.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    InsertarCarroComponent,
+    InfoUsuarioComponent,
+    TablaVehiculosComponent,
+    PagoComponent,
+    HomeComponent
   ],
   imports: [
     NgbModule,
