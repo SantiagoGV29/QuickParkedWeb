@@ -17,6 +17,8 @@ import { TablaVehiculosComponent } from './components/tabla-vehiculos/tabla-vehi
 import { PagoComponent } from './components/pago/pago.component';
 import { HomeComponent } from './components/home/home.component';
 
+import { NgxPaginationModule } from 'ngx-pagination';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,8 @@ import { HomeComponent } from './components/home/home.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbPaginationModule
+    NgbPaginationModule,
+    NgxPaginationModule
   ],
   providers: [],//Luego se coloca el service
   bootstrap: [AppComponent]

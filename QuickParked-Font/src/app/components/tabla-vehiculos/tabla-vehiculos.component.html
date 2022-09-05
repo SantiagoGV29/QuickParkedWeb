@@ -1,1 +1,45 @@
-<p>tabla-vehiculos works!</p>
+<div class="paginacionDiv" role="main">
+
+  <div class="tooldivTitulo" role="banner">
+    <h5 style="margin-left: 10px;">Listado de Vehículos</h5>
+  </div>
+
+  <div>
+    <form action="">
+      <div class="form-group">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Vehículo</th>
+              <th scope="col">Tipo Vehículo</th>
+              <th scope="col">Placa</th>
+              <th scope="col">Ingreso</th>
+              <th scope="col">Tarifa</th>
+              <th scope="col">Lugar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor= "let vehiculo of vehiculos | paginate: {itemsPerPage: 7, currentPage: p}; let i = index">
+              <th>
+
+              </th>
+            </tr>
+          </tbody>
+
+
+
+        </table>
+        <pagination-controls (pageChange)= "p = $event"></pagination-controls>
+      </div>
+    </form>
+  </div>
+
+
+
+
+
+<hr size="4px" width="425" color="#1190cb">
+      <!-- <input [(ngModel)]="libro.nombre" name="nombre" type="text" class="form-control"> -->
+ <!-- Resources -->
+</div>
+
