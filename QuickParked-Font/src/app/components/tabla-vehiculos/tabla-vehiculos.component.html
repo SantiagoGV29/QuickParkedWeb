@@ -20,9 +20,13 @@
           </thead>
           <tbody>
             <tr *ngFor= "let vehiculo of vehiculos | paginate: {itemsPerPage: 7, currentPage: p}; let i = index">
-              <th>
+              <th>{{vehiculo.id}}</th>
+              <th>{{vehiculo.tipo}}</th>
+              <th>{{vehiculo.placa}}</th>
+              <th>{{vehiculo.ingreso}}</th>
+              <th>{{vehiculo.tarifa}}</th>
+              <th>{{vehiculo.lugar}}</th>
 
-              </th>
             </tr>
           </tbody>
 
