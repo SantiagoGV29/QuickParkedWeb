@@ -18,6 +18,7 @@ import { PagoComponent } from './components/pago/pago.component';
 import { HomeComponent } from './components/home/home.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ParkingComponent } from './components/parking/parking.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     InfoUsuarioComponent,
     TablaVehiculosComponent,
     PagoComponent,
-    HomeComponent
+    HomeComponent,
+    ParkingComponent
   ],
   imports: [
     NgbModule,
