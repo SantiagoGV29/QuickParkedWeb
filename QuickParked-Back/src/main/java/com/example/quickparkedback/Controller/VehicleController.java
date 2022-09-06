@@ -26,8 +26,9 @@ public class VehicleController {
 
     ArrayList<Vehicle> arr = new ArrayList<>();
     public VehicleController() {
-        Slotparking slot = new Slotparking(1, "hola");
-        Typevehicle type = new Typevehicle(1, TypeCar.Automovil);
+        Date date = new Date();
+        Slotparking slot = new Slotparking(1,date);
+        Typevehicle type = new Typevehicle(1, "Automovil",50);
         Vehicle ve = new Vehicle(1,"ABC345",slot,type);
         arr.add(ve);
     }
@@ -35,7 +36,7 @@ public class VehicleController {
     @GetMapping("/Vehicles")
     public ArrayList<Vehicle> GetVehicles() {
         return arr;
-       // return (ArrayList<Vehicle>) this.vehicleService.getVehicles();
+       //return (ArrayList<Vehicle>) this.vehicleService.getVehicles();
     }
 
     @RequestMapping(value = "/Vehicle/{id}",
@@ -52,7 +53,6 @@ public class VehicleController {
     )
     public Vehicle InsertVehicle(@RequestBody Vehicle vehicle) {
         this.slotParkingService.insertSlot(vehicle.getSlotparking());
-        this.typeVehicleService.insertType(vehicle.getTypevehicle());
         return this.vehicleService.insertVehicle(vehicle);
     }
 

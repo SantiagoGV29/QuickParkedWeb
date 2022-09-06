@@ -19,8 +19,7 @@ import static javax.persistence.GenerationType.AUTO;
 @Entity
 public class Typevehicle {
     @Id
-    @GeneratedValue(strategy = AUTO)
     private Integer id;
-    private TypeCar typevehicle;
-    //private Integer rate = typeVehicle.getValue();
+    private String typevehicle;
+    private Integer rate;
 }

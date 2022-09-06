@@ -9,5 +9,4 @@ public enum TypeCar {
     Camioneta ,
     Furgon ,
     Electrico;
-
 }
