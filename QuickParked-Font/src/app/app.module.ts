@@ -10,10 +10,26 @@ import{FormsModule}from '@angular/forms';
 import{HttpClientModule}from '@angular/common/http'
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './components/login/login.component';
+import { InsertarVehiculoComponent } from './components/insertar-vehiculo/insertar-vehiculo.component';
+import { InfoUsuarioComponent } from './components/info-usuario/info-usuario.component';
+import { TablaVehiculosComponent } from './components/tabla-vehiculos/tabla-vehiculos.component';
+import { PagoComponent } from './components/pago/pago.component';
+import { HomeComponent } from './components/home/home.component';
+
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ParkingComponent } from './components/parking/parking.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    InsertarVehiculoComponent,
+    InfoUsuarioComponent,
+    TablaVehiculosComponent,
+    PagoComponent,
+    HomeComponent,
+    ParkingComponent
   ],
   imports: [
     NgbModule,
@@ -22,7 +38,8 @@ import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbPaginationModule
+    NgbPaginationModule,
+    NgxPaginationModule
   ],
   providers: [],//Luego se coloca el service
   bootstrap: [AppComponent]
