@@ -1,4 +1,4 @@
-<div class="paginacionDiv" role="main">
+<div role="main" style="padding-left: 10px; padding-top:10px">
 
   <div class="tooldivTitulo" role="banner">
     <h5 style="margin-left: 10px;">Listado de Vehículos</h5>
@@ -29,20 +29,15 @@
 
             </tr>
           </tbody>
-
-
-
         </table>
         <pagination-controls (pageChange)= "p = $event"></pagination-controls>
       </div>
     </form>
   </div>
-
-
-
-
-
-<hr size="4px" width="425" color="#1190cb">
+  <hr size="4px" width="100%" color="#1190cb">
+  <div style="margin-left: 70%;">
+    <button (click)="GenerarPago()"   class="btn" style="margin-top:10px; background-color: #1190cb ; border-color: #0000; border-radius: 35px; margin-bottom: 20px; margin-top: 20px; color: white;">Generar Pago</button>
+  </div>
       <!-- <input [(ngModel)]="libro.nombre" name="nombre" type="text" class="form-control"> -->
  <!-- Resources -->
 </div>

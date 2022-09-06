@@ -21,4 +21,9 @@ export class TablaVehiculosComponent implements OnInit {
     */
   }
 
+  GenerarPago(){
+    this.router.navigate(["payment"]);
+
+  }
+
 }

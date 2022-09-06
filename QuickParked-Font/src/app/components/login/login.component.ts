@@ -18,6 +18,13 @@ export class LoginComponent implements OnInit {
   }
 
   IniciarSesion(){
+    if(this.usuario.userName=="admin" && this.usuario.password=="admin"){
+      this.router.navigate(["parking"]);
+    }else{
+      alert("Usuario y Contraseña Incorrectos");
+    }
+
+    /*
     this.service.iniciarSesion(this.usuario)
     .subscribe(data=>{
       alert("Se Inicia con Exito");
@@ -25,6 +32,7 @@ export class LoginComponent implements OnInit {
     })
     alert("Usuario y Contraseña Incorrectos");
     this.router.navigate(["home"]);
+    */
 
   }
 
