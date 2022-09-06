@@ -1,11 +1,14 @@
 package com.example.quickparkedback.Model;
 
+import com.example.quickparkedback.Model.Enums.TypeCar;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 import static javax.persistence.GenerationType.AUTO;
 
@@ -14,15 +17,10 @@ import static javax.persistence.GenerationType.AUTO;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Vehicle {
+public class Typevehicle {
     @Id
     @GeneratedValue(strategy = AUTO)
-    private  Integer id;
-    private String licenceplate;
-    @OneToOne
-    @JoinColumn(name = "Slotparkingid")
-    private Slotparking slotparking;
-    @OneToOne
-    @JoinColumn(name = "Typevehicleid")
-    private Typevehicle typevehicle;
+    private Integer id;
+    private TypeCar typevehicle;
+    //private Integer rate = typeVehicle.getValue();
 }
