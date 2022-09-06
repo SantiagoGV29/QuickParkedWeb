@@ -15,4 +15,7 @@ export class InsertarVehiculoComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  Pagar(){}
+
 }

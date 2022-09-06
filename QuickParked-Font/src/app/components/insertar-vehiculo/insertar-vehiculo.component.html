@@ -1,15 +1,46 @@
-<p>insertar-carro works!</p>
-<p>insertar-carro works!</p>
-<p>insertar-carro works!</p><p>insertar-carro works!</p><p>insertar-carro works!</p>
-<p>insertar-carro works!</p><p>insertar-carro works!</p>
-<p>insertar-carro works!</p>
-<p>insertar-carro works!</p>
-<p>insertar-carro works!</p>
-<p>insertar-carro works!</p><p>insertar-carro works!</p><p>insertar-carro works!</p>
-<p>insertar-carro works!</p><p>insertar-carro works!</p>
-<p>insertar-carro works!</p>
-<p>insertar-carro works!</p>
-<p>insertar-carro works!</p>
-<p>insertar-carro works!</p><p>insertar-carro works!</p><p>insertar-carro works!</p>
-<p>insertar-carro works!</p><p>insertar-carro works!</p>
-<p>insertar-carro works!</p>
+<div style="margin-left: 7%;">
+
+  <img
+    width="350"
+    alt="QuickParked Logo"
+    src="https://raw.githubusercontent.com/dani09barreto/QuickParked/main/QuickParked/src/main/resources/org/devscite/Interface/View/img/logo.png"
+    />
+    <p style="font-size: x-large; margin-left: 7%;">Ingresar Vehículo</p>
+
+    <div class="form-check form-check-inline" style="margin-top: 4%; font-size:larger;margin-left: 10%;">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+      <label class="form-check-label" for="inlineRadio1">Carro</label>
+    </div>
+    <div class="form-check form-check-inline" style="margin-top: 4%; font-size:larger; margin-left: 20%;">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+      <label class="form-check-label" for="inlineRadio2">Moto</label>
+    </div>
+
+    <div style="margin-bottom: 4%; margin-top: 4%; margin-left: 7%;">
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+          <option selected>Tipo de Vehículo</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+    </div>
+
+    <div>
+      <div class="row row-cols-2">
+        <div class="col">
+          <div>
+            <input name="pago" type="text" class="form-control" style="border-radius: 35px; font-size: 12px;" placeholder="Digite Monto" >
+              <div class="input-group-addon">
+                <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+              </div>
+          </div>
+        </div>
+        <div class="col">
+          <div>
+            <button (click)="Pagar()" class="btn" style="color: white; width: 50%; background-color: #1190cb ; border-color: #0000; border-radius: 35px; margin-bottom: 20px; ">Pagar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+ </div>
