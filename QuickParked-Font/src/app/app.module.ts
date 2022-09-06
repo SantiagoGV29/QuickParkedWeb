@@ -11,7 +11,7 @@ import{HttpClientModule}from '@angular/common/http'
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './components/login/login.component';
-import { InsertarCarroComponent } from './components/insertar-carro/insertar-carro.component';
+import { InsertarVehiculoComponent } from './components/insertar-vehiculo/insertar-vehiculo.component';
 import { InfoUsuarioComponent } from './components/info-usuario/info-usuario.component';
 import { TablaVehiculosComponent } from './components/tabla-vehiculos/tabla-vehiculos.component';
 import { PagoComponent } from './components/pago/pago.component';
@@ -24,7 +24,7 @@ import { ParkingComponent } from './components/parking/parking.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    InsertarCarroComponent,
+    InsertarVehiculoComponent,
     InfoUsuarioComponent,
     TablaVehiculosComponent,
     PagoComponent,

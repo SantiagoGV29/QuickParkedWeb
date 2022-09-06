@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   }
 
   IniciarSesion(){
+    //ENVIAR EL USUARIO AL COMPONENTE PARKING
     if(this.usuario.userName=="admin" && this.usuario.password=="admin"){
       this.router.navigate(["parking"]);
     }else{
