@@ -5,8 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+
+import static javax.persistence.GenerationType.AUTO;
 
 @Getter
 @Setter
@@ -15,8 +16,13 @@ import javax.persistence.Id;
 @Entity
 public class Vehicle {
     @Id
-    private String plate;
-    private Integer parkingPlace;
-    private Integer price;
-
+    @GeneratedValue(strategy = AUTO)
+    private  Integer id;
+    private String licenceplate;
+    @OneToOne
+    @JoinColumn(name = "Slotparkingid")
+    private Slotparking slotparking;
+    @OneToOne
+    @JoinColumn(name = "Typevehicleid")
+    private Typevehicle typevehicle;
 }
