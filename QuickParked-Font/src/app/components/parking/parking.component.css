@@ -47,12 +47,8 @@ body {
 
   .divInsertar {
 
-    margin: 102px auto 32px;
-    margin-left: -10px;
-    padding: 20px 26px;
-    height: 400px;
-    width: 50%px;
-    float:left;
+    height: 100%;
+    width: 100%;
     flex-direction: column;
     align-items:flex-start;
     background-color: #e8e8e8;
@@ -62,15 +58,17 @@ body {
 
   .divLista {
 
-    margin: 102px auto 32px;
-    padding: 20px 26px;
-    height: 400px;
-    width: 50%;
-    float:left;
+    height: 100%;
+    width: 100%;
     flex-direction: column;
     align-items:flex-start;
     background-color: #b4b4c1;
     border-radius: 1px;
+  }
+
+  .container{
+    margin-top: 80px;
+    height: max-content;
   }
 
 
