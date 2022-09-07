@@ -23,20 +23,9 @@ public class VehicleController {
     private ITypeVehicleService typeVehicleService;
     @Autowired
     private ISlotParkingService slotParkingService;
-
-    ArrayList<Vehicle> arr = new ArrayList<>();
-    public VehicleController() {
-        Date date = new Date();
-        Slotparking slot = new Slotparking(1,date);
-        Typevehicle type = new Typevehicle(1, "Automovil",50);
-        Vehicle ve = new Vehicle(1,"ABC345",slot,type);
-        arr.add(ve);
-    }
-
     @GetMapping("/Vehicles")
     public ArrayList<Vehicle> GetVehicles() {
-        return arr;
-       //return (ArrayList<Vehicle>) this.vehicleService.getVehicles();
+       return (ArrayList<Vehicle>) this.vehicleService.getVehicles();
     }
 
     @RequestMapping(value = "/Vehicle/{id}",
