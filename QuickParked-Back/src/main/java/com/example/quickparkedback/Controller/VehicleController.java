@@ -50,7 +50,7 @@ public class VehicleController {
     }
 
     @DeleteMapping("/Delete/{id}")
-    public Boolean PayVehicle(@PathVariable("id") Integer id){
+    public Double PayVehicle(@PathVariable("id") Integer id){
         return this.vehicleService.delete(id);
     }
 }
