@@ -12,29 +12,28 @@ import { ServicioService } from '../../services/servicio.service';
 export class LoginComponent implements OnInit {
   usuario:UserParking = new UserParking();
 
-  constructor(private router:Router,private service:ServicioService) { }
+  _user!: string;
+  _pass! : string;
+
+  constructor(private router:Router, private service: ServicioService) { }
 
   ngOnInit(): void {
   }
 
-  IniciarSesion(){
-    //ENVIAR EL USUARIO AL COMPONENTE PARKING
-    if(this.usuario.userName=="admin" && this.usuario.password=="admin"){
-      this.router.navigate(["parking"]);
-    }else{
-      alert("Usuario y Contraseña Incorrectos");
-    }
-
-    /*
-    this.service.iniciarSesion(this.usuario)
-    .subscribe(data=>{
-      alert("Se Inicia con Exito");
-      this.router.navigate(["home"]);
-    })
-    alert("Usuario y Contraseña Incorrectos");
-    this.router.navigate(["home"]);
-    */
-
+  autentic (){
+  
+    console.log(this._user + " " + this._pass);
+    this.service.getToken(this._user, this._pass)
+    .subscribe(
+      (response) => {                           //Next callback
+        console.log('response received')
+        localStorage.setItem('token', response[<any>'token'])
+        this.router.navigate(['/parking']);
+      },
+      (_error) => {                              //Error callback
+        alert("usuario o contraseña incorrecta");
+      }
+    )
   }
 
 }

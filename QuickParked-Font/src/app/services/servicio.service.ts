@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { UserParking } from '../models/UserParking'
+
 @Injectable({
   providedIn: 'root'
 })
 export class ServicioService {
 
-  constructor(private http : HttpClient) { }
+  constructor(private _http : HttpClient) { }
 
   url = 'http://localhost:8080/';
 
@@ -16,8 +17,12 @@ export class ServicioService {
   }
   */
 
-  iniciarSesion(usuario:UserParking){
-    return this.http.post<UserParking>(this.url+"login",usuario);
+  getToken(_user: string, _pass : string){
+    const headersUser = new HttpHeaders().set('Authorization', 'Basic ' + btoa(_user + ':' + _pass));
+    const optionsUser = {
+      headers: headersUser
+    };
+    return this._http.get <string []> (this.url + 'parking/token', optionsUser);
   }
 
   /*
