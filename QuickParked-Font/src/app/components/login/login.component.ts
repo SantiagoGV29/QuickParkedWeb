@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { UserParking } from 'src/app/models/UserParking';
-import { ServicioService } from '../../services/servicio.service';
+import { AuthService } from 'src/app/service/auth.service';
+import { ServicioService } from 'src/app/service/servicio.service';
 
 
 @Component({
@@ -10,31 +10,27 @@ import { ServicioService } from '../../services/servicio.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  usuario:UserParking = new UserParking();
 
-  constructor(private router:Router,private service:ServicioService) { }
+  _user!: string;
+  _pass! : string;
+
+  constructor(private router:Router, private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
-  IniciarSesion(){
-    //ENVIAR EL USUARIO AL COMPONENTE PARKING
-    if(this.usuario.userName=="admin" && this.usuario.password=="admin"){
-      this.router.navigate(["parking"]);
-    }else{
-      alert("Usuario y Contraseña Incorrectos");
-    }
-
-    /*
-    this.service.iniciarSesion(this.usuario)
-    .subscribe(data=>{
-      alert("Se Inicia con Exito");
-      this.router.navigate(["home"]);
-    })
-    alert("Usuario y Contraseña Incorrectos");
-    this.router.navigate(["home"]);
-    */
-
+  autentic (){
+    console.log(this._user + " " + this._pass);
+    this.authService.login(this._user, this._pass)
+    .subscribe(
+      (response) => {                           //Next callback
+        console.log('response received')
+        this.router.navigate(['/parking']);
+      },
+      (_error) => {                              //Error callback
+        alert("usuario o contraseña incorrecta");
+      }
+    )
   }
 
 }

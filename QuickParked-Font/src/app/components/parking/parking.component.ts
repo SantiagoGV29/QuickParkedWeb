@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { UserParking } from 'src/app/models/UserParking';
-import { Vehiculo } from 'src/app/models/Vehiculo';
-import { ServicioService } from '../../services/servicio.service';
+import { Vehicle } from 'src/app/models/Vehicle';
+import { ServicioService } from 'src/app/service/servicio.service';
 
 @Component({
   selector: 'app-parking',
@@ -11,12 +10,9 @@ import { ServicioService } from '../../services/servicio.service';
 })
 export class ParkingComponent implements OnInit {
 
-  usuario:UserParking = new UserParking();
   constructor(private router:Router,private service:ServicioService) { }
 
   ngOnInit(): void {
-    this.usuario.userName="admin";
-    //Eliminar lo anterior
   }
 
 }

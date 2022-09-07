@@ -19,16 +19,20 @@ public class VehicleController {
     @Qualifier("vehicleServiceImp")
     @Autowired
     private IVehicleService vehicleService;
+
+    @Qualifier("typeVehicleImpService")
     @Autowired
     private ITypeVehicleService typeVehicleService;
+    @Qualifier("slotParkingImpService")
     @Autowired
     private ISlotParkingService slotParkingService;
-    @GetMapping("/Vehicles")
+
+    @GetMapping("/vehicles")
     public ArrayList<Vehicle> GetVehicles() {
        return (ArrayList<Vehicle>) this.vehicleService.getVehicles();
     }
 
-    @RequestMapping(value = "/Vehicle/{id}",
+    @RequestMapping(value = "/vehicle/{id}",
             method = RequestMethod.GET,
             produces = "application/json")
     @ResponseBody
@@ -36,7 +40,7 @@ public class VehicleController {
         return this.vehicleService.getVehiclebyId(id);
     }
 
-    @RequestMapping(value = "/Insert",
+    @RequestMapping(value = "/insert",
             method = RequestMethod.POST,
             produces = {"application/json", "application/xml"}
     )

@@ -15,16 +15,16 @@
   <form action="">
     <div class="form-group">
       <h6>Usuario</h6>
-      <input [(ngModel)]="usuario.userName" name="user" type="text" class="form-control" style="border-radius: 35px;">
+      <input [(ngModel)]="_user" name="user" type="text" class="form-control" style="border-radius: 35px;">
       <h6>Contraseña</h6>
-      <input [(ngModel)]="usuario.password" name="pass" type="password" class="form-control password" style="border-radius: 35px;">
+      <input [(ngModel)]="_pass" name="pass" type="password" class="form-control password" style="border-radius: 35px;">
       <div class="input-group-addon">
         <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
       </div>
       <!-- <input [(ngModel)]="libro.nombre" name="nombre" type="text" class="form-control"> -->
     </div>
     <div style= "align-items: center;">
-      <button (click)="IniciarSesion()" class="btn btn-danger" style="margin-top:10px; background-color: #1190cb ; border-color: #0000; border-radius: 35px; margin-bottom: 20px; margin-top: 20px;">Iniciar Sesión</button>
+      <button (click)="autentic ()" class="btn btn-danger" style="margin-top:10px; background-color: #1190cb ; border-color: #0000; border-radius: 35px; margin-bottom: 20px; margin-top: 20px;">Iniciar Sesión</button>
     </div>
   </form>
 </div>
