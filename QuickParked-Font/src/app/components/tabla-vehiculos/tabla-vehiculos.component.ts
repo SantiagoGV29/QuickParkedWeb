@@ -27,6 +27,7 @@ export class TablaVehiculosComponent implements OnInit {
       },
       (_error) => {                              //Error callback
         alert("Tiempo de sesion activa incorrecta");
+        localStorage.removeItem('token')
         this.router.navigate(['/login']);
       }
     )
