@@ -19,7 +19,7 @@
           </thead>
           <tbody>
             <tr *ngFor= "let vehicle of myVehicles | paginate: {itemsPerPage: 7, currentPage: p}; let i = index">
-              <th>{{vehicle.id}}</th>
+              <th>{{myVehicles.indexOf(vehicle) + 1}}</th>
               <th>{{vehicle.typevehicle.typevehicle}}</th>
               <th>{{vehicle.licenceplate}}</th>
               <th>{{vehicle.slotparking.checkin}}</th>

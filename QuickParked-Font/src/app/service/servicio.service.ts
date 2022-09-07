@@ -23,7 +23,7 @@ export class ServicioService {
     const options = {
       headers: headers,
     };
-    return this._http.get <Vehicle[]> (this.url + 'parking/vehicles' + options)
+    return this._http.get <Vehicle[]> (this.url + 'parking/vehicles', options)
     .pipe(
       catchError((err) => {
         console.log('error caught in service')
