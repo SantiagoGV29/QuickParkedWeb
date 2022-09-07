@@ -19,7 +19,7 @@ import static javax.persistence.GenerationType.AUTO;
 @Entity
 public class Typevehicle {
     @Id
-    private Integer id;
+    private Long id;
     private String typevehicle;
     private Integer rate;
 }

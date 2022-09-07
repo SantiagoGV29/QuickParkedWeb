@@ -6,5 +6,5 @@ import org.springframework.stereotype.Service;
 @Service
 public interface ISlotParkingService {
     Slotparking insertSlot(Slotparking slot);
-    Boolean DeleteSlot(Integer id);
+    Boolean DeleteSlot(Long id);
 }

@@ -6,5 +6,5 @@ import org.springframework.stereotype.Service;
 @Service
 public interface ITypeVehicleService {
     Typevehicle insertType(Typevehicle type);
-    Boolean deleteType(Integer id);
+    Boolean deleteType(Long id);
 }

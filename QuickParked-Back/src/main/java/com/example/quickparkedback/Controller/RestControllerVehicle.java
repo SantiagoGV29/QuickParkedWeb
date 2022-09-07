@@ -1,8 +1,5 @@
 package com.example.quickparkedback.Controller;
 
-import com.example.quickparkedback.Model.Enums.TypeCar;
-import com.example.quickparkedback.Model.Slotparking;
-import com.example.quickparkedback.Model.Typevehicle;
 import com.example.quickparkedback.Model.Vehicle;
 import com.example.quickparkedback.Service.ISlotParkingService;
 import com.example.quickparkedback.Service.ITypeVehicleService;
@@ -15,15 +12,15 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/parking")
-public class VehicleController {
+public class RestControllerVehicle {
     @Qualifier("vehicleServiceImp")
     @Autowired
     private IVehicleService vehicleService;
 
-    @Qualifier("typeVehicleImpService")
+    @Qualifier("typeVehicleServiceImp")
     @Autowired
     private ITypeVehicleService typeVehicleService;
-    @Qualifier("slotParkingImpService")
+    @Qualifier("slotParkingServiceImp")
     @Autowired
     private ISlotParkingService slotParkingService;
 
@@ -36,7 +33,7 @@ public class VehicleController {
             method = RequestMethod.GET,
             produces = "application/json")
     @ResponseBody
-    public Vehicle GetVehicleByplate(@PathVariable("id") Integer id) {
+    public Vehicle GetVehicleByplate(@PathVariable("id") Long id) {
         return this.vehicleService.getVehiclebyId(id);
     }
 
@@ -50,7 +47,7 @@ public class VehicleController {
     }
 
     @DeleteMapping("/Delete/{id}")
-    public Boolean PayVehicle(@PathVariable("id") Integer id){
+    public Boolean PayVehicle(@PathVariable("id") Long id){
         return this.vehicleService.delete(id);
     }
 }

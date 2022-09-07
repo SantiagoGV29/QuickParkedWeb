@@ -22,12 +22,12 @@ public class VehicleServiceImp implements IVehicleService{
     }
 
     @Override
-    public Vehicle getVehiclebyId(Integer id) {
+    public Vehicle getVehiclebyId(Long id) {
         return vehicleRepository.findById(id).orElse(null);
     }
 
     @Override
-    public Boolean delete(Integer id) {
+    public Boolean delete(Long id) {
         try{
             vehicleRepository.deleteById(id);
             return true;

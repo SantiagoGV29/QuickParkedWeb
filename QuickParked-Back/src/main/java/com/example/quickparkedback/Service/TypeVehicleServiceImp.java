@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TypeVehicleImpService implements ITypeVehicleService {
+public class TypeVehicleServiceImp implements ITypeVehicleService {
     @Autowired
     private ITypeVehicleRepository iTypeVehicleRepository;
 
@@ -16,7 +16,7 @@ public class TypeVehicleImpService implements ITypeVehicleService {
     }
 
     @Override
-    public Boolean deleteType(Integer id) {
+    public Boolean deleteType(Long id) {
         try{
             iTypeVehicleRepository.deleteById(id);
             return true;

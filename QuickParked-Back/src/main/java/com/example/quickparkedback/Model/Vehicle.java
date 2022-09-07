@@ -17,7 +17,7 @@ import static javax.persistence.GenerationType.AUTO;
 public class Vehicle {
     @Id
     @GeneratedValue(strategy = AUTO)
-    private  Integer id;
+    private Long id;
     private String licenceplate;
     @OneToOne
     @JoinColumn(name = "Slotparkingid")

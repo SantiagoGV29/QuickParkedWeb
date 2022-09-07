@@ -20,5 +20,5 @@ public class authorities {
     @GeneratedValue (strategy = GenerationType.AUTO)
     private Integer id;
     private String username;
-    private String authoriry;
+    private String authority;
 }

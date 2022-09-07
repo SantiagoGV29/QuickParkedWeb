@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SlotParkingImpService implements ISlotParkingService {
+public class SlotParkingServiceImp implements ISlotParkingService {
     @Autowired
     private ISlotParkingRepository slotParkingRepository;
 
@@ -16,7 +16,7 @@ public class SlotParkingImpService implements ISlotParkingService {
     }
 
     @Override
-    public Boolean DeleteSlot(Integer id) {
+    public Boolean DeleteSlot(Long id) {
         try {
             slotParkingRepository.deleteById(id);
             return true;
