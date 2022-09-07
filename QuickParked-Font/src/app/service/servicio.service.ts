@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
-import { UserParking } from '../models/UserParking'
+import { catchError, Observable, throwError } from 'rxjs';
+import { Vehicle } from '../models/Vehicle';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,21 @@ export class ServicioService {
     return this.http.get<Libro[]>(this.url+"libros");
   }
   */
+
+  getParkingVehicles(): Observable <Vehicle[]>{
+    const headers = new HttpHeaders().set('Authorization', 'Bearer '+localStorage.getItem('token'));
+    const options = {
+      headers: headers,
+    };
+    return this._http.get <Vehicle[]> (this.url + 'parking/vehicles' + options)
+    .pipe(
+      catchError((err) => {
+        console.log('error caught in service')
+        console.error(err);
+        return throwError(err);
+      })
+    );
+  }
 
   getToken(_user: string, _pass : string){
     const headersUser = new HttpHeaders().set('Authorization', 'Basic ' + btoa(_user + ':' + _pass));

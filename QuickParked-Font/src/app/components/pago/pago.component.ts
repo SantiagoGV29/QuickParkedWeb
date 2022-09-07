@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { ServicioService } from '../../services/servicio.service';
+import { ServicioService } from 'src/app/service/servicio.service';
 @Component({
   selector: 'app-pago',
   templateUrl: './pago.component.html',

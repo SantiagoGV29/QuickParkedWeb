@@ -15,18 +15,15 @@
               <th scope="col">Placa</th>
               <th scope="col">Ingreso</th>
               <th scope="col">Tarifa</th>
-              <th scope="col">Lugar</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor= "let vehiculo of vehiculos | paginate: {itemsPerPage: 7, currentPage: p}; let i = index">
-              <th>{{vehiculo.id}}</th>
-              <th>{{vehiculo.tipo}}</th>
-              <th>{{vehiculo.placa}}</th>
-              <th>{{vehiculo.ingreso}}</th>
-              <th>{{vehiculo.tarifa}}</th>
-              <th>{{vehiculo.lugar}}</th>
-
+            <tr *ngFor= "let vehicle of myVehicles | paginate: {itemsPerPage: 7, currentPage: p}; let i = index">
+              <th>{{vehicle.id}}</th>
+              <th>{{vehicle.typevehicle.typevehicle}}</th>
+              <th>{{vehicle.licenceplate}}</th>
+              <th>{{vehicle.slotparking.checkin}}</th>
+              <th>{{vehicle.typevehicle.rate}}</th>
             </tr>
           </tbody>
         </table>

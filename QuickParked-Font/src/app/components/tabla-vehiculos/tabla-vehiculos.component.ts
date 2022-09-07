@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { Vehiculo } from 'src/app/models/Vehiculo';
-import { ServicioService } from '../../services/servicio.service';
+import { Vehicle } from 'src/app/models/Vehicle';
+import { ServicioService } from 'src/app/service/servicio.service';
+
 @Component({
   selector: 'app-tabla-vehiculos',
   templateUrl: './tabla-vehiculos.component.html',
@@ -9,16 +10,27 @@ import { ServicioService } from '../../services/servicio.service';
 })
 export class TablaVehiculosComponent implements OnInit {
 
-  vehiculos:Vehiculo[];
+  myVehicles : Vehicle [] = [];
+  
   p: number=1;
   constructor(private router:Router,private service:ServicioService) { }
 
   ngOnInit(): void {
-    /*
-    this.service.getLibros().subscribe(data=>{
-      this.libros=data;
-    })
-    */
+    this.getVehicles();
+  }
+
+  getVehicles(){
+    this.service.getParkingVehicles()
+    .subscribe(
+      (response) => {                           //Next callback
+        this.myVehicles = response;
+      },
+      (_error) => {                              //Error callback
+        alert("Tiempo de sesion activa incorrecta");
+        this.router.navigate(['/login']);
+      }
+    )
+    console.log(this.myVehicles); 
   }
 
   GenerarPago(){

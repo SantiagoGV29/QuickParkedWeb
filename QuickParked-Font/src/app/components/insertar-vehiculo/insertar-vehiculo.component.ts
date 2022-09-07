@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { UserParking } from 'src/app/models/UserParking';
-import { ServicioService } from '../../services/servicio.service';
+import { ServicioService } from 'src/app/service/servicio.service';
 
 
 @Component({
@@ -11,7 +10,7 @@ import { ServicioService } from '../../services/servicio.service';
 })
 export class InsertarVehiculoComponent implements OnInit {
 
-  constructor(private router:Router,private service:ServicioService) { }
+  constructor(private router:Router,private service: ServicioService) { }
 
   ngOnInit(): void {
   }
