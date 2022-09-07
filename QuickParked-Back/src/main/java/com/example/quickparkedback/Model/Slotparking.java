@@ -16,6 +16,7 @@ import static javax.persistence.GenerationType.AUTO;
 @NoArgsConstructor
 public class Slotparking {
     @Id
+    @GeneratedValue(strategy = AUTO)
     private Integer id;
     private Date checkin;
 }
