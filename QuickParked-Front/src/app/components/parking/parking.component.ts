@@ -10,7 +10,7 @@ import { ServicioService } from 'src/app/service/servicio.service';
 })
 export class ParkingComponent implements OnInit {
 
-  constructor(private router:Router,private service:ServicioService) { }
+  constructor(private router:Router, private service:ServicioService) { }
 
   ngOnInit(): void {
   }

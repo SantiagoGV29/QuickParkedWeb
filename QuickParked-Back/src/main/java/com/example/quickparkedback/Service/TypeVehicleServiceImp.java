@@ -5,6 +5,8 @@ import com.example.quickparkedback.Repository.ITypeVehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TypeVehicleServiceImp implements ITypeVehicleService {
     @Autowired
@@ -24,5 +26,10 @@ public class TypeVehicleServiceImp implements ITypeVehicleService {
             e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public List<Typevehicle> getTypeVehicles() {
+        return iTypeVehicleRepository.findAll();
     }
 }

@@ -17,11 +17,9 @@
     </div>
 
     <div style="margin-bottom: 4%; margin-top: 4%; margin-left: 7%;">
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-          <option selected>Tipo de Vehículo</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" (change)="changeTypeVehicle($event)">
+          <option value="">Tipo Vehiculo</option>
+          <option [value]="typevehicle.typevehicle" *ngFor="let typevehicle of typeVehicles">{{typevehicle.typevehicle}}</option>
         </select>
     </div>
 
@@ -29,7 +27,8 @@
       <div class="row row-cols-2">
         <div class="col">
           <div>
-            <input name="pago" type="text" class="form-control" style="border-radius: 35px; font-size: 12px;" placeholder="Digite Monto" >
+            <input name="plateVehicle"type="text" class="form-control" style="border-radius: 35px; font-size: 12px;" [formControl] = "plateVehicle" placeholder="Digite Placa" >
+            <small class="campo" *ngIf="plateVehicle.hasError('required') && plateVehicle.dirty">*campo requerido*</small>
               <div class="input-group-addon">
                 <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
               </div>
@@ -37,7 +36,7 @@
         </div>
         <div class="col">
           <div>
-            <button (click)="Pagar()" class="btn" style="color: white; width: 50%; background-color: #1190cb ; border-color: #0000; border-radius: 35px; margin-bottom: 20px; ">Pagar</button>
+            <button (click)="addVehicle()" class="btn" style="color: white; width: 50%; background-color: #1190cb ; border-color: #0000; border-radius: 35px; margin-bottom: 20px; ">Insertar</button>
           </div>
         </div>
       </div>

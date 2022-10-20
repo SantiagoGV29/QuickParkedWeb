@@ -17,5 +17,5 @@ public class Slotparking {
     @Id
     @GeneratedValue(strategy = AUTO)
     private Long id;
-    private Date checkin;
+    private String checkin;
 }

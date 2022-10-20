@@ -1,11 +1,14 @@
 package com.example.quickparkedback.Controller;
 
+import com.example.quickparkedback.Model.Slotparking;
+import com.example.quickparkedback.Model.Typevehicle;
 import com.example.quickparkedback.Model.Vehicle;
 import com.example.quickparkedback.Service.ISlotParkingService;
 import com.example.quickparkedback.Service.ITypeVehicleService;
 import com.example.quickparkedback.Service.IVehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -24,6 +27,11 @@ public class RestControllerVehicle {
     @Autowired
     private ISlotParkingService slotParkingService;
 
+    @GetMapping("/TypeVehicles")
+    public ArrayList<Typevehicle> getTypeVehicles (){
+        return (ArrayList<Typevehicle>) this.typeVehicleService.getTypeVehicles();
+    }
+
     @GetMapping("/vehicles")
     public ArrayList<Vehicle> GetVehicles() {
        return (ArrayList<Vehicle>) this.vehicleService.getVehicles();
@@ -39,7 +47,7 @@ public class RestControllerVehicle {
 
     @RequestMapping(value = "/insert",
             method = RequestMethod.POST,
-            produces = {"application/json", "application/xml"}
+            consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
     )
     public Vehicle InsertVehicle(@RequestBody Vehicle vehicle) {
         this.slotParkingService.insertSlot(vehicle.getSlotparking());

@@ -5,6 +5,7 @@ import com.example.quickparkedback.Repository.IVehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -33,7 +34,8 @@ public class VehicleServiceImp implements IVehicleService {
     public Boolean delete(Long id) {
         try {
             Vehicle dot = vehicleRepository.findById(id).orElse(null);
-            Date checkin = dot.getSlotparking().getCheckin();
+            assert dot != null;
+            Date checkin = new SimpleDateFormat("h:mm:ss a").parse(dot.getSlotparking().getCheckin());
             Date checkout = new Date();
             long diff =  checkout.getTime() - checkin.getTime();
             TimeUnit tm = TimeUnit.MINUTES;
