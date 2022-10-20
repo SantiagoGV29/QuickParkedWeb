@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IVehicleRepository extends JpaRepository <Vehicle,Long> {
     Vehicle findByLicenceplate (String licencePlate);
+    Boolean deleteByLicenceplate (String plate);
 }

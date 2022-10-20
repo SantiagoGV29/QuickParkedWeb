@@ -1,62 +1,57 @@
 <div class="content" role="main">
 
   <div class="tooldiv" role="banner">
-    <a href="http://localhost:4200/">
-      <img
-      width="30"
-      alt="Back Button"
-      src="https://raw.githubusercontent.com/dani09barreto/QuickParked/main/QuickParked/src/main/resources/org/devscite/Interface/View/img/back-button.png"
-    />
+    <a href="http://localhost:4200/parking">
+      <img width="30" alt="Back Button"
+        src="https://raw.githubusercontent.com/dani09barreto/QuickParked/main/QuickParked/src/main/resources/org/devscite/Interface/View/img/back-button.png" />
     </a>
   </div>
   <div class="tooldivTitulo" role="banner">
     <h5 style="margin-left: 20px;">Pago de Vehículo</h5>
   </div>
 
-<div>
-  <form action="">
-    <div class="card-header">
-      <h4>Placa</h4>
-    </div>
-    <div class="form-group">
-      <table class="table table-hover" style="margin-top: -20px;">
-        <thead>
-          <tr>
-            <th>
-              <input name="placa" type="text" class="form-control" style="border-radius: 35px; font-size: 12px;" placeholder="Digite Placa" >
-              <div class="input-group-addon">
-                <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
-              </div>
-            </th>
-            <th>
+  <div>
+    <form action="">
+      <div class="card-header">
+        <h4>Placa</h4>
+      </div>
+      <div class="form-group">
+        <table class="table table-hover" style="margin-top: -20px;">
+          <thead>
+            <tr>
+              <th>
+                <input name="placa" type="text" class="form-control" style="border-radius: 35px; font-size: 12px;"
+                  [formControl]="plateVehicle" placeholder="Digite Placa">
+                <div class="input-group-addon">
+                  <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+                </div>
+              </th>
+              <th>
 
-              <div class="tooldivSearch" role="banner">
-                <a>
-                  <div>
-                    <button (click)="Pagar()" class="btn" style="margin-top:10px; background-color: #0000 ; border-color: #0000; border-radius: 25px;">
+                <div class="tooldivSearch" role="banner">
+                  <a>
+                    <div>
+                      <button (click)="searchPlate()" class="btn"
+                        style="margin-top:10px; background-color: #0000 ; border-color: #0000; border-radius: 25px;">
 
-                      <img
-                  width="20"
-                  style="margin-left:-4px ; margin-bottom: 10px;"
-                  alt="Back Button"
-                  src="https://raw.githubusercontent.com/dani09barreto/QuickParked/main/QuickParked/src/main/resources/org/devscite/Interface/View/img/search.png"
-                  />
+                        <img width="20" style="margin-left:-4px ; margin-bottom: 10px;" alt="Back Button"
+                          src="https://raw.githubusercontent.com/dani09barreto/QuickParked/main/QuickParked/src/main/resources/org/devscite/Interface/View/img/search.png" />
 
-                    </button>
-                  </div>
+                      </button>
+                    </div>
 
-                </a>
-              </div>
+                  </a>
+                </div>
 
-            </th>
-          </tr>
-        </thead>
-      </table>
-    </div>
-  </form>
-</div>
+              </th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </form>
+  </div>
 
- <hr size="4px" width="425" color="#1190cb">
+  <hr size="4px" width="425" color="#1190cb">
   <div class="tooldivTitulo2" role="banner">
     <h5 style="margin-left: 35px;">Información de Vehículo</h5>
   </div>
@@ -86,7 +81,7 @@
               </th>
               <th>
                 <label>
-                  <h6>Aqui va info</h6>
+                  <h6>{{vehicle.licenceplate}}</h6>
                 </label>
               </th>
             </tr>
@@ -98,7 +93,7 @@
               </th>
               <th>
                 <label>
-                  <h6>Aqui va info</h6>
+                  <h6>{{vehicle.typevehicle.typevehicle}}</h6>
                 </label>
               </th>
             </tr>
@@ -110,7 +105,7 @@
               </th>
               <th>
                 <label>
-                  <h6>Aqui va info</h6>
+                  <h6>{{vehicle.slotparking.checkin}}</h6>
                 </label>
               </th>
             </tr>
@@ -122,7 +117,7 @@
               </th>
               <th>
                 <label>
-                  <h6>Aqui va info</h6>
+                  <h6>{{vehicle.typevehicle.rate}}</h6>
                 </label>
               </th>
             </tr>
@@ -134,7 +129,7 @@
               </th>
               <th>
                 <label style="color: #1190cb;">
-                  <h6>Aqui va info</h6>
+                  <h6>$ {{priceService}}</h6>
                 </label>
               </th>
             </tr>
@@ -148,36 +143,36 @@
 
 
 
-<hr size="4px" width="425" color="#1190cb">
+  <hr size="4px" width="425" color="#1190cb">
 
-<div>
-  <form action="">
-    <div class="card-header">
-      <h4>Recibido</h4>
-    </div>
-    <div class="form-group">
-      <table class="table table-hover" style="margin-top: -20px;">
-        <thead>
-          <tr>
-            <th>
-              <input name="pago" type="text" class="form-control" style="border-radius: 35px; font-size: 12px;" placeholder="Digite Monto" >
-              <div class="input-group-addon">
-                <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
-              </div>
-            </th>
-            <th>
-              <div class="tooldivPagarButton" role="banner">
-                <button (click)="Pagar()" class="btn btn-danger" style="margin-top:10px; background-color: #1190cb ; border-color: #0000; border-radius: 35px; margin-bottom: 20px; margin-top: 20px;">Pagar</button>
-              </div>
-
-            </th>
-          </tr>
-        </thead>
-      </table>
-    </div>
-  </form>
+  <div>
+    <form action="">
+      <div class="card-header">
+        <h4>Recibido</h4>
+      </div>
+      <div class="form-group">
+        <table class="table table-hover" style="margin-top: -20px;">
+          <thead>
+            <tr>
+              <th>
+                <input name="pago" type="text" class="form-control" style="border-radius: 35px; font-size: 12px;" [formControl]="payvalue"
+                  placeholder="Digite Monto">
+                <div class="input-group-addon">
+                  <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+                </div>
+              </th>
+              <th>
+                <div class="tooldivPagarButton" role="banner">
+                  <button (click)="payService()" class="btn btn-danger"
+                    style="margin-top:10px; background-color: #1190cb ; border-color: #0000; border-radius: 35px; margin-bottom: 20px; margin-top: 20px;">Pagar</button>
+                </div>
+              </th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </form>
+  </div>
+  <!-- <input [(ngModel)]="libro.nombre" name="nombre" type="text" class="form-control"> -->
+  <!-- Resources -->
 </div>
-      <!-- <input [(ngModel)]="libro.nombre" name="nombre" type="text" class="form-control"> -->
- <!-- Resources -->
-</div>
-

@@ -10,7 +10,7 @@ public interface IVehicleService {
 
     Vehicle insertVehicle(Vehicle vehicle);
     List<Vehicle> getVehicles();
-    Vehicle getVehiclebyId(Long id);
-    Boolean delete(Long id);
+    Vehicle getVehiclebyPlate(String plate);
+    void delete(Long id);
 
 }
