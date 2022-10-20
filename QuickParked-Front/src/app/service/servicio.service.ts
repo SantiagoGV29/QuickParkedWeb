@@ -73,4 +73,28 @@ export class ServicioService {
     return this._http.get <string []> (this.url + 'parking/token', optionsUser);
   }
 
+  getVehicle(_plate: string){
+    const headers = new HttpHeaders().set('Authorization', 'Bearer '+localStorage.getItem('token'));
+    const options = {
+      headers: headers,
+    };
+    return this._http.get <Vehicle> (this.url + 'parking/vehicle/' + _plate, options);
+  }
+
+  getPrace (_plate: string){
+    const headers = new HttpHeaders().set('Authorization', 'Bearer '+localStorage.getItem('token'));
+    const options = {
+      headers: headers,
+    };
+    return this._http.get <number> (this.url + 'parking/pay/' + _plate , options);
+  }
+
+  payService (_plate: string, _value: number, _service: number){
+    const headers = new HttpHeaders().set('Authorization', 'Bearer '+localStorage.getItem('token'));
+    const options = {
+      headers: headers,
+    };
+    return this._http.delete <boolean> (this.url + 'parking/pay/' + _plate + '/' + _value + '/' + _service , options)
+  }
+
 }

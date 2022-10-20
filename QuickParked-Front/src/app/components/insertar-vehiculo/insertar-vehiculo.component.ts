@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import {Router} from '@angular/router';
 import { ServicioService } from 'src/app/service/servicio.service';
 import { FormControl, Validators} from '@angular/forms';
@@ -14,6 +14,7 @@ import { Subscription } from 'rxjs';
 })
 export class InsertarVehiculoComponent implements OnInit, OnDestroy {
 
+  @Output() private update = new EventEmitter<string>();
   typeVehicles : TypeVehicle [] = [];
   plateVehicle = new FormControl ('', [Validators.required]);
   rateVehicle : number;
@@ -42,7 +43,7 @@ export class InsertarVehiculoComponent implements OnInit, OnDestroy {
       alert("debe insertar la placa del vehiculo");
       return;
     }
-    const dateString = formatDate(new Date (), "h:mm:ss a", "en-US");
+    const dateString = formatDate(new Date (), "HH:mm:ss", "en-US");
     const newslotparking = {checkin : dateString};
     this.typeVehicles.forEach((type) => {
       if (type.typevehicle == this.typeVehicleSelect){
@@ -58,6 +59,8 @@ export class InsertarVehiculoComponent implements OnInit, OnDestroy {
     this.service.addVehicle(newVehicle).subscribe({
       next:(res:any)=>{
         console.log(res);
+        this.plateVehicle.setValue("");
+        this.update.emit("refresh");
       },
       error:err=>{
         console.log(err)

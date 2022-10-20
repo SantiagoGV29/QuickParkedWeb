@@ -25,10 +25,7 @@
 
       <div class="divInsertar">
 
-        <app-insertar-vehiculo></app-insertar-vehiculo>
-
-
-
+        <app-insertar-vehiculo (update)="refresh($event)"></app-insertar-vehiculo>
 
 
             <!-- <input [(ngModel)]="libro.nombre" name="nombre" type="text" class="form-control"> -->
@@ -39,15 +36,9 @@
     <div class="col" style="width: 65%;">
 
       <div class="divLista">
-
-
         <app-tabla-vehiculos></app-tabla-vehiculos>
 
-
-
       </div>
-
-
 
     </div>
   </div>

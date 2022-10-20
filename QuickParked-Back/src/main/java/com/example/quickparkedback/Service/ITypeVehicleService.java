@@ -9,6 +9,5 @@ import java.util.List;
 public interface ITypeVehicleService {
     Typevehicle insertType(Typevehicle type);
     Boolean deleteType(Long id);
-
     List <Typevehicle> getTypeVehicles ();
 }

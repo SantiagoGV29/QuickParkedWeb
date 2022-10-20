@@ -26,26 +26,12 @@ public class VehicleServiceImp implements IVehicleService {
     }
 
     @Override
-    public Vehicle getVehiclebyId(Long id) {
-        return vehicleRepository.findById(id).orElse(null);
+    public Vehicle getVehiclebyPlate(String plate) {
+        return vehicleRepository.findByLicenceplate(plate);
     }
 
     @Override
-    public Boolean delete(Long id) {
-        try {
-            Vehicle dot = vehicleRepository.findById(id).orElse(null);
-            assert dot != null;
-            Date checkin = new SimpleDateFormat("h:mm:ss a").parse(dot.getSlotparking().getCheckin());
-            Date checkout = new Date();
-            long diff =  checkout.getTime() - checkin.getTime();
-            TimeUnit tm = TimeUnit.MINUTES;
-            diff = tm.convert(diff,TimeUnit.MILLISECONDS);
-            Double precio = (double) (diff * dot.getTypevehicle().getRate());
-            vehicleRepository.deleteById(id);
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
+    public void delete(Long id) {
+        this.vehicleRepository.deleteById(id);
     }
 }

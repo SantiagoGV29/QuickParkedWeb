@@ -18,7 +18,7 @@ public class SlotParkingServiceImp implements ISlotParkingService {
     @Override
     public Boolean DeleteSlot(Long id) {
         try {
-            slotParkingRepository.deleteById(id);
+            this.slotParkingRepository.deleteById(id);
             return true;
         }catch (Exception e){
             e.printStackTrace();
