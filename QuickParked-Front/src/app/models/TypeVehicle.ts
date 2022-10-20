@@ -1,5 +1,5 @@
 export class TypeVehicle{
-    id: number;
+    id?: number;
     typevehicle: string;
     rate: number;
 
