@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { Vehicle } from 'src/app/models/Vehicle';
 import { ServicioService } from 'src/app/service/servicio.service';
+import { ParkingComponent } from '../parking/parking.component';
 
 @Component({
   selector: 'app-tabla-vehiculos',
@@ -11,9 +12,9 @@ import { ServicioService } from 'src/app/service/servicio.service';
 export class TablaVehiculosComponent implements OnInit {
 
   myVehicles : Vehicle [] = [];
-  
+
   p: number=1;
-  constructor(private router:Router,private service:ServicioService) { }
+  constructor(private router:Router,private service:ServicioService, private park:ParkingComponent ) { }
 
   ngOnInit(): void {
     this.getVehicles();
@@ -31,12 +32,12 @@ export class TablaVehiculosComponent implements OnInit {
         this.router.navigate(['/login']);
       }
     )
-    console.log(this.myVehicles); 
+    console.log(this.myVehicles);
   }
 
   GenerarPago(){
-    this.router.navigate(["payment"]);
-
+    //this.router.navigate(["payment"]);
+    this.park.openDialog();
   }
 
 }
