@@ -7,6 +7,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import{FormsModule}from '@angular/forms';
 
+import {MatDialogModule} from '@angular/material/dialog';
+
+
 import{HttpClientModule}from '@angular/common/http'
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
@@ -19,6 +22,7 @@ import { HomeComponent } from './components/home/home.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ParkingComponent } from './components/parking/parking.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,10 @@ import { ParkingComponent } from './components/parking/parking.component';
     AppRoutingModule,
     HttpClientModule,
     NgbPaginationModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    MatDialogModule
+
   ],
   providers: [],//Luego se coloca el service
   bootstrap: [AppComponent]

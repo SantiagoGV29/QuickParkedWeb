@@ -36,8 +36,8 @@ body {
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #fafbfc;
-    color: black;
+    background-color: #24292e;
+    color: white;
     font-weight: 600;
     font-size: medium;
   }
@@ -54,6 +54,9 @@ body {
     align-items:flex-start;
     background-color: #e8e8e8;
     border-radius: 1px;
+    border-style:solid;
+    border-width: 2px;
+
   }
 
 
@@ -63,8 +66,11 @@ body {
     width: 100%;
     flex-direction: column;
     align-items:flex-start;
-    background-color: #b4b4c1;
+    background-color: #e8e8e8;
     border-radius: 1px;
+    border-style:solid;
+    border-width: 2px;
+
   }
 
   .container{

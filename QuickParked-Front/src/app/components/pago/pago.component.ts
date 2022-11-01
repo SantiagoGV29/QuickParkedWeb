@@ -1,8 +1,10 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Inject } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import {Router} from '@angular/router';
 import { Vehicle } from 'src/app/models/Vehicle';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ServicioService } from 'src/app/service/servicio.service';
+import { ParkingComponent } from '../parking/parking.component';
 @Component({
   selector: 'app-pago',
   templateUrl: './pago.component.html',
@@ -15,7 +17,14 @@ export class PagoComponent implements OnInit {
   payvalue = new FormControl ('', [Validators.required]);
   plateVehicle = new FormControl ('', [Validators.required]);
   @Output() private update = new EventEmitter<string>();
-  constructor(private router:Router,private service:ServicioService) { }
+  constructor(
+    private router:Router,
+    private service:ServicioService,
+     public dialogRef: MatDialogRef<PagoComponent>) { }
+
+  onNoClick(): void{
+    this.dialogRef.close();
+  }
 
   ngOnInit(): void {
   }
@@ -43,6 +52,7 @@ export class PagoComponent implements OnInit {
         console.log(err);
       }
     })
+    this.onNoClick();
 
   }
   searchPlate(){
