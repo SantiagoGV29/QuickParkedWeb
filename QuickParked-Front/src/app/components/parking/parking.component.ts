@@ -6,6 +6,7 @@ import { ServicioService } from 'src/app/service/servicio.service';
 import { TablaVehiculosComponent } from '../tabla-vehiculos/tabla-vehiculos.component';
 import {MatDialog} from '@angular/material/dialog';
 import { PagoComponent } from '../pago/pago.component';
+import { ModificarComponent } from 'src/app/modificar/modificar.component';
 
 @Component({
   selector: 'app-parking',
@@ -32,13 +33,30 @@ export class ParkingComponent implements OnInit {
     }
   }
 
-  openDialog(): void {
+  openDialogPay(): void {
 
     //this.router.navigate(["payment"]);
 
     const dialogRef = this.dialog.open(PagoComponent, {
       //width: '250px',
+      height:'100%',
       data: {},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+
+  }
+
+  openDialogModify(): void {
+
+    //this.router.navigate(["payment"]);
+
+    const dialogRef = this.dialog.open(ModificarComponent, {
+      //width: '250px',
+      height:'100%',
+      data: {}
     });
 
     dialogRef.afterClosed().subscribe(result => {

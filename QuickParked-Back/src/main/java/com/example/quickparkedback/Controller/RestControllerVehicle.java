@@ -92,4 +92,19 @@ public class RestControllerVehicle {
         return (double) (minutes * veh.getTypevehicle().getRate());
     }
 
+    @RequestMapping(value = "/modify/{plate}",
+            method = RequestMethod.PUT ,
+            consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
+    )
+    public Boolean modify(@PathVariable("plate") String plate, @RequestBody Vehicle vehicle) {
+        Vehicle v = this.vehicleService.getVehiclebyPlate(plate);
+        //Aqui se busca con la placa no actualizada el vehículo.
+        //Luego se actualiza con los nuevos valores.
+        v.setLicenceplate(vehicle.getLicenceplate());
+        v.setTypevehicle(vehicle.getTypevehicle());
+        this.vehicleService.update(v);
+        //this.slotParkingService.insertSlot(vehicle.getSlotparking());
+        return true;
+    }
+
 }

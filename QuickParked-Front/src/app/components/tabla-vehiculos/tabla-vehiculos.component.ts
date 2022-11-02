@@ -37,7 +37,13 @@ export class TablaVehiculosComponent implements OnInit {
 
   GenerarPago(){
     //this.router.navigate(["payment"]);
-    this.park.openDialog();
+    this.park.openDialogPay();
+  }
+
+  Modificar(){
+    //this.router.navigate(["payment"]);
+    
+    this.park.openDialogModify();
   }
 
 }

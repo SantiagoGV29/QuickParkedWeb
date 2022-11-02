@@ -34,4 +34,16 @@ public class VehicleServiceImp implements IVehicleService {
     public void delete(Long id) {
         this.vehicleRepository.deleteById(id);
     }
+
+    @Override
+    public void update(Vehicle v) {
+        this.vehicleRepository.save(v);
+    }
+
+    /*
+    @Override
+    public Boolean updateVehicle(Vehicle vehicle) {
+        return vehicleRepository;
+    }
+     */
 }

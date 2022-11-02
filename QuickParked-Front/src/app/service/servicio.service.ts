@@ -9,7 +9,7 @@ import { Vehicle } from '../models/Vehicle';
   providedIn: 'root'
 })
 export class ServicioService {
-  
+
   private refresh = new Subject <void> ();
 
   constructor(private _http : HttpClient) { }
@@ -63,7 +63,7 @@ export class ServicioService {
     };
     console.log(vehicle);
     return this._http.post <Vehicle> (this.url + 'parking/insert', vehicle , options);
-  } 
+  }
 
   getToken(_user: string, _pass : string){
     const headersUser = new HttpHeaders().set('Authorization', 'Basic ' + btoa(_user + ':' + _pass));
@@ -96,5 +96,12 @@ export class ServicioService {
     };
     return this._http.delete <boolean> (this.url + 'parking/pay/' + _plate + '/' + _value + '/' + _service , options)
   }
-
+  modifyVehicle (pastPlate:string, vehicle : Vehicle){
+    const headers = new HttpHeaders().set('Authorization', 'Bearer '+localStorage.getItem('token'));
+    const options = {
+      headers: headers,
+    };
+    console.log(vehicle);
+    return this._http.put <Vehicle> (this.url + 'parking/modify/'+pastPlate , vehicle , options);
+  }
 }
