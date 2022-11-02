@@ -23,6 +23,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ParkingComponent } from './components/parking/parking.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModificarComponent } from './modificar/modificar.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TablaVehiculosComponent,
     PagoComponent,
     HomeComponent,
-    ParkingComponent
+    ParkingComponent,
+    ModificarComponent
   ],
   imports: [
     NgbModule,

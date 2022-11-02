@@ -18,7 +18,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor= "let vehicle of myVehicles | paginate: {itemsPerPage: 7, currentPage: p}; let i = index">
+            <tr *ngFor="let vehicle of myVehicles | paginate: {itemsPerPage: 7, currentPage: p}; let i = index">
               <th>{{myVehicles.indexOf(vehicle) + 1}}</th>
               <th>{{vehicle.typevehicle.typevehicle}}</th>
               <th>{{vehicle.licenceplate}}</th>
@@ -27,16 +27,37 @@
             </tr>
           </tbody>
         </table>
-        <pagination-controls (pageChange)= "p = $event"></pagination-controls>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
       </div>
     </form>
   </div>
   <hr size="4px" width="100%" color="#1190cb">
 
-  <div style="margin-left: 70%;">
-    <button (click)="GenerarPago()"   class="btn" style="margin-top:10px; background-color: #1190cb ; border-color: #0000; border-radius: 35px; margin-bottom: 20px; margin-top: 20px; color: white;">Generar Pago</button>
-  </div>
-      <!-- <input [(ngModel)]="libro.nombre" name="nombre" type="text" class="form-control"> -->
- <!-- Resources -->
+
+
+<div style="margin-left: 290px;">
+  <table>
+    <tr>
+      <th>
+        <div style="margin-left: 150px;">
+          <button (click)="GenerarPago()" class="btn"
+            style=" width: 150px;margin-right: 20px; margin-top:10px; background-color: #1190cb ; border-color: #0000; border-radius: 35px; margin-bottom: 20px; margin-top: 20px; color: white;">Generar
+            Pago</button>
+        </div>
+      </th>
+      <th>
+        <div style="margin-left: auto;">
+          <button (click)="Modificar()" class="btn"
+            style="margin-top:10px; background-color: #1190cb ; border-color: #0000; border-radius: 35px; margin-bottom: 20px; margin-top: 20px; color: white;">Modificar</button>
+        </div>
+      </th>
+    </tr>
+  </table>
 </div>
 
+
+
+
+  <!-- <input [(ngModel)]="libro.nombre" name="nombre" type="text" class="form-control"> -->
+  <!-- Resources -->
+</div>

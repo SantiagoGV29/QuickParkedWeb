@@ -13,4 +13,7 @@ public interface IVehicleService {
     Vehicle getVehiclebyPlate(String plate);
     void delete(Long id);
 
+    void update(Vehicle v);
+    //Boolean updateVehicle(Vehicle vehicle);
+
 }

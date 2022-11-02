@@ -23,7 +23,7 @@ export class InsertarVehiculoComponent implements OnInit, OnDestroy {
   suscription: Subscription = new Subscription;
 
   constructor(private router:Router,private service: ServicioService) { }
-  
+
 
   ngOnInit(): void {
     this.getTypeVehicles();
@@ -80,7 +80,7 @@ export class InsertarVehiculoComponent implements OnInit, OnDestroy {
         this.router.navigate(['/login']);
       }
     )
-    console.log(this.typeVehicles); 
+    console.log(this.typeVehicles);
   }
 
 }
