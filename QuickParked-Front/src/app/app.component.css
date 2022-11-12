@@ -1,5 +1,5 @@
 body {
-  background-color: #1190cb;
+  background-color: white;
 }
 :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -35,8 +35,8 @@ body {
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #fafbfc;
-    color: black;
+    background-color: #24292e;
+    color: white;
     font-weight: 600;
   }
 
@@ -67,7 +67,9 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: #e8e8e8;
-    border-radius: 35px;
+    border-radius: 1px;
+    border-style: solid;
+    border-width: 2px;
   }
 
   svg.material-icons {

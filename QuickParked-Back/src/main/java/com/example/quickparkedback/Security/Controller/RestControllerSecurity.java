@@ -24,7 +24,7 @@ public class RestControllerSecurity {
     @CrossOrigin(origins = {"http://localhost:4200", "http://localhost:4200/"}, methods = {RequestMethod.OPTIONS, RequestMethod.GET})
     public String token(Authentication authentication) {
         Instant now = Instant.now();
-        long expiry = 120L;
+        long expiry = 1200000L;
         // @formatter:off
         String scope = authentication.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)

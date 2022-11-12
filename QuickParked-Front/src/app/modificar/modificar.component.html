@@ -7,7 +7,7 @@
     </a>
   </div>
   <div class="tooldivTitulo" role="banner">
-    <h5 style="margin-left: 20px;">Pago de Vehículo</h5>
+    <h5 style="margin-left: 20px;">Modificar Vehiculo</h5>
   </div>
 
   <div>
@@ -84,6 +84,12 @@
                   <h6>{{vehicle.licenceplate}}</h6>
                 </label>
               </th>
+              <th>
+                <label>
+                  <input  name="nuevaPlaca" type="text" class="form-control" style="border-radius: 35px; font-size: 12px;"
+                  [formControl]="newPlateVehicle" placeholder="Placa">
+                </label>
+              </th>
             </tr>
             <tr>
               <th>
@@ -96,41 +102,13 @@
                   <h6>{{vehicle.typevehicle.typevehicle}}</h6>
                 </label>
               </th>
-            </tr>
-            <tr>
               <th>
-                <label>
-                  <h5>Hora Ingreso</h5>
-                </label>
-              </th>
-              <th>
-                <label>
-                  <h6>{{vehicle.slotparking.checkin}}</h6>
-                </label>
-              </th>
-            </tr>
-            <tr>
-              <th>
-                <label>
-                  <h5>Tarifa</h5>
-                </label>
-              </th>
-              <th>
-                <label>
-                  <h6>{{vehicle.typevehicle.rate}}</h6>
-                </label>
-              </th>
-            </tr>
-            <tr>
-              <th>
-                <label style="color: #1190cb;">
-                  <h5>Precio</h5>
-                </label>
-              </th>
-              <th>
-                <label style="color: #1190cb;">
-                  <h6>$ {{priceService}}</h6>
-                </label>
+                <div style="margin-bottom: 4%; margin-top: 4%; margin-left: 7%;">
+                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" (change)="changeTypeVehicle($event)">
+                    <option value="">Tipo Vehiculo</option>
+                    <option [value]="typevehicle.typevehicle" *ngFor="let typevehicle of typeVehicles">{{typevehicle.typevehicle}}</option>
+                  </select>
+              </div>
               </th>
             </tr>
           </thead>
@@ -147,24 +125,19 @@
 
   <div>
     <form action="">
-      <div class="card-header">
-        <h4>Recibido</h4>
-      </div>
       <div class="form-group">
         <table class="table table-hover" style="margin-top: -20px;">
           <thead>
             <tr>
               <th>
-                <input name="pago" type="text" class="form-control" style="border-radius: 35px; font-size: 12px;" [formControl]="payvalue"
-                  placeholder="Digite Monto">
                 <div class="input-group-addon">
                   <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
                 </div>
               </th>
               <th>
                 <div class="tooldivPagarButton" role="banner">
-                  <button (click)="payService()" class="btn btn-danger"
-                    style="margin-top:10px; background-color: #1190cb ; border-color: #0000; border-radius: 35px; margin-bottom: 20px; margin-top: 20px;">Pagar</button>
+                  <button (click)="UpdateVehicle()" class="btn btn-danger"
+                    style="margin-top:10px; background-color: #1190cb ; border-color: #0000; border-radius: 35px; margin-bottom: 20px; margin-top: 20px;">Modificar</button>
                 </div>
               </th>
             </tr>

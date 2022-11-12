@@ -2,7 +2,7 @@ import { SlotParking } from "./SlotParking";
 import { TypeVehicle } from "./TypeVehicle";
 
 export class Vehicle {
-  id: number;
+  id?: number;
   licenceplate:string;
   slotparking: SlotParking;
   typevehicle: TypeVehicle;
