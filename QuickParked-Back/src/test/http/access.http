@@ -1,0 +1,6 @@
+GET http://localhost:8080/parking/token HTTP/1.1
+Content-Type: application/json
+Authorization: Basic am9objoxMjM0NQ==
+username: john
+password: 12345
+

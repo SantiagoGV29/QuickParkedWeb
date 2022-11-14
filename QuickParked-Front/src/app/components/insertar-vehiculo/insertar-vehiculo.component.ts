@@ -43,7 +43,7 @@ export class InsertarVehiculoComponent implements OnInit, OnDestroy {
       alert("debe insertar la placa del vehiculo");
       return;
     }
-    const dateString = formatDate(new Date (), "HH:mm:ss", "en-US");
+    const dateString = formatDate(new Date (), "yyyy-MM-dd HH:mm:ss", "en-US");//Debe coincidir con lo que soporta el tipo date de la bd
     const newslotparking = {checkin : dateString};
     this.typeVehicles.forEach((type) => {
       if (type.typevehicle == this.typeVehicleSelect){
