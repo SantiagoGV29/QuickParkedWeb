@@ -1,0 +1,17 @@
+POST http://localhost:8080/parking/insert HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiam9obiIsImV4cCI6MTY2OTYzNzkwMiwiaWF0IjoxNjY4NDM3OTAyLCJzY29wZSI6IkFETUlOIn0.A71XqAKye8-V3OuGGYzV8ePkyw4RzlGUHHHORHX3Yvlpm4shHyVghJ1bfwSrx0BRhOj6uVB70urqWPrZHRBZ6QzDMUhWbmZuhytLzbuU56iVpjBFPiM7ryWvAoykjKnmXDd2pWVyGb3Y-ZzoyMJRIly9t1z6uEnJAnLx4cGPk-62ip2TpyABQOunk8bdmfzNxmGyCkYuBgPgr7XnvsiyZv7QEnSPCmkpxB6e73IKSHkVsv1GAHkL1-QHzhxV_M63OXrCRfI2oaDY_sSvn4w5SXme18AWzj1ACOosPkG6BQRp9ORwVw618QY6iRfR13oqWltw75RzySBxn8loMbXhDg
+
+{
+    "id": 2,
+    "licenceplate": "BBB222",
+    "slotparking": {
+      "id": 1,
+      "checkin": "2022-11-01 18:21:13"
+    },
+    "typevehicle": {
+      "id": 1,
+      "typevehicle": "Automovil",
+      "rate": 50
+    }
+}

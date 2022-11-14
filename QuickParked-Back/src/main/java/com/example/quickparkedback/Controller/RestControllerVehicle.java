@@ -81,7 +81,7 @@ public class RestControllerVehicle {
         Calendar date =  Calendar.getInstance();
         assert veh != null;
         Calendar checkIn = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss", Locale.ENGLISH);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
         String checkOutString = sdf.format(date.getTime());
         Calendar checkOut = Calendar.getInstance();
         checkOut.setTime(sdf.parse(checkOutString));
