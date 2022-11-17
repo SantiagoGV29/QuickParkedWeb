@@ -27,7 +27,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 @WebMvcTest(RestControllerVehicle.class)
 class QuickParkedBackApplicationTests {
-    
+
     @Autowired
     private MockMvc mockMvc;
 

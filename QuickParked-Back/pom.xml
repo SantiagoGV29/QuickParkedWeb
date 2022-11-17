@@ -69,6 +69,12 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml -->
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>

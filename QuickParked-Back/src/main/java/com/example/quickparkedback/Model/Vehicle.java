@@ -25,4 +25,10 @@ public class Vehicle {
     @OneToOne
     @JoinColumn(name = "Typevehicleid")
     private Typevehicle typevehicle;
+
+    public Vehicle(String plate, Slotparking slotparking, Typevehicle typevehicle) {
+        this.licenceplate=plate;
+        this.slotparking = slotparking;
+        this.typevehicle=typevehicle;
+    }
 }
