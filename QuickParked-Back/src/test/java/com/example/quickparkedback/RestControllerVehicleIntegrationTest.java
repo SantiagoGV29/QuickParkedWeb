@@ -26,6 +26,9 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.annotation.DirtiesContext.ClassMode;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.util.Assert;
 
 
@@ -37,6 +40,8 @@ import java.util.ArrayList;
 import java.util.Date;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+@ActiveProfiles("integrationtest")
+@DirtiesContext(classMode= ClassMode.BEFORE_EACH_TEST_METHOD)
 public class RestControllerVehicleIntegrationTest {
 
     @Qualifier("vehicleServiceImp")
@@ -107,4 +112,10 @@ public class RestControllerVehicleIntegrationTest {
         System.out.println(result.getBody());
         assertEquals(200, result.getStatusCodeValue());
     }
+
+    @Test
+    void deleteVehicles(){
+
+    }
+
 }

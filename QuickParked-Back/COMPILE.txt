@@ -1,0 +1,6 @@
+/*EJECUTAR COMO APLICACION*/
+mvn spring-boot:run -D"spring-boot.run.profiles"=local
+
+/*EJECUTAR CON ENTORNO DE PRUEBAS*/
+mvn test
+mvn test -Dtest=RestControllerVehicleIntegrationTest#NOMBREFUNCIONTEST
