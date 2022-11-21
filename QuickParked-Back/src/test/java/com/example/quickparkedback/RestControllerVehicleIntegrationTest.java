@@ -13,6 +13,8 @@ import com.example.quickparkedback.Service.IVehicleService;
 import net.minidev.json.JSONObject;
 import net.minidev.json.parser.JSONParser;
 import net.minidev.json.parser.ParseException;
+
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,10 +82,18 @@ public class RestControllerVehicleIntegrationTest {
         this.vehicleService.insertVehicle(tesla);
     }
 
+    void revert(){
+        Vehicle tesla = this.vehicleService.getVehiclebyPlate("PPP222");
+        this.slotParkingService.insertSlot(tesla.getSlotparking());
+        this.vehicleService.insertVehicle(tesla);
+    }
+
     @Test
     @BeforeEach
     void getToken() throws URISyntaxException, ParseException {
-        init();
+        try{
+            revert();
+        }catch(Exception e){};
         final String baseUrl = "http://localhost:"+port+"/parking/token";
         //
         HttpHeaders headers = new HttpHeaders();
@@ -115,7 +125,36 @@ public class RestControllerVehicleIntegrationTest {
 
     @Test
     void deleteVehicles(){
+        // retorna valor /pay/{plate}
+        // retorna cambio /pay/{plate}/{value}/{service}
 
+        final String baseUrl = "http://localhost:"+port+"/parking/pay";
+        //
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization",tempToken);//ADMIN
+        //
+        HttpEntity<Void> requestEntity = new HttpEntity<>(headers);
+        ResponseEntity<String> result = this.rest.exchange(baseUrl, HttpMethod.GET, requestEntity, String.class);
+        System.out.println(result.getBody());
+        assertEquals(200, 200);
+
+    }
+
+    @Test
+    void getOne(){
+        String plate="PPP222";
+        final String baseUrl = "http://localhost:"+port+"/parking/vehicle/"+plate;
+        //
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization",tempToken);//ADMIN
+        //
+        HttpEntity<Void> requestEntity = new HttpEntity<>(headers);
+        ResponseEntity<String> result = this.rest.exchange(baseUrl, HttpMethod.GET, requestEntity, String.class);
+        //System.out.println(result.getBody());
+        try{
+            revert();
+        }catch(Exception e){};
+        assertEquals(200, result.getStatusCodeValue());
     }
 
 }
