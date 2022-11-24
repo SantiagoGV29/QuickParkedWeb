@@ -22,7 +22,7 @@ typevehicle:
 ![image](https://user-images.githubusercontent.com/75964273/203703833-3f69912f-8f39-4fc8-ad00-27c2ac6c8fb2.png)
 ![image](https://user-images.githubusercontent.com/75964273/203703868-39b074ea-2ea9-4b43-a17a-f689511d4d88.png)
 
-<<INSERT INTO `securitytest`.`typevehicle`
+INSERT INTO `securitytest`.`typevehicle`
 (`id`,
 `rate`,
 `typevehicle`)
@@ -57,4 +57,13 @@ VALUES
 (5,
 40,
 "Moto");
->>
+
+slotparking:
+![image](https://user-images.githubusercontent.com/75964273/203704307-64715f62-73cc-4f64-a945-0d76922e98c1.png)
+![image](https://user-images.githubusercontent.com/75964273/203704334-42e22e7b-8786-4fcf-892a-c6de63e3e999.png)
+
+vehicles:
+![image](https://user-images.githubusercontent.com/75964273/203704602-9f43137f-7c22-4048-a5fa-ce5c2147e71e.png)
+
+![image](https://user-images.githubusercontent.com/75964273/203704644-c78c2601-3aa4-4a67-8de3-ed603e7fd925.png)
+
