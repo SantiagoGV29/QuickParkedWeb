@@ -1,5 +1,5 @@
 /*EJECUTAR COMO APLICACION*/
-mvn spring-boot:run -D"spring-boot.run.profiles"=local
+mvn spring-boot:run -D"spring-boot.run.profiles"=devel
 
 /*EJECUTAR CON ENTORNO DE PRUEBAS*/
 mvn test
