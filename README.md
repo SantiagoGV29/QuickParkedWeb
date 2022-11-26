@@ -2,6 +2,10 @@
 On this proyect we will make a parking software in which our clients could acces from internet
 
 https://www.youtube.com/watch?v=JaAmMuU6rsc
+
+![test](https://user-images.githubusercontent.com/75964273/204109310-34efcb07-dd07-4345-839c-88b9783c2831.gif)
+
+
 #ty
 # PARA LOGIN PROBAR CON "john:12345" como usuario y contraseña
 
