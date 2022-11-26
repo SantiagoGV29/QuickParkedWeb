@@ -1,0 +1,1 @@
+Ambos esquemas, de securitytest y quickparkedproduction en el app.properties, son la misma bd, está duplicada.
