@@ -1,0 +1,30 @@
+-------------------------------------------------------------------------------
+Test set: com.example.AppTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 14.009 s <<< FAILURE! - in com.example.AppTest
+testAgregar(com.example.AppTest)  Time elapsed: 8.514 s  <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=107.0.5304.121)
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'MARK-77', ip: '25.6.84.72', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b94d73536f9d8934266d2b8d987d37e2, get {url=http://127.0.0.1:5500/traslav2/index.html}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.121, chrome: {chromedriverVersion: 107.0.5304.18 (fde5ebf4e16d..., userDataDir: C:\Users\elpad\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:55456}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55456/devtoo..., se:cdpVersion: 107.0.5304.121, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b94d73536f9d8934266d2b8d987d37e2
+	at com.example.AppTest.init(AppTest.java:24)
+
+testRemover(com.example.AppTest)  Time elapsed: 5.383 s  <<< ERROR!
+org.openqa.selenium.remote.UnreachableBrowserException: 
+Error communicating with the remote browser. It may have died.
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'MARK-77', ip: '25.6.84.72', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0a431f8b9dfe4bf822e495ec1c32f41e, get {url=http://127.0.0.1:5500/traslav2/index.html}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.121, chrome: {chromedriverVersion: 107.0.5304.18 (fde5ebf4e16d..., userDataDir: C:\Users\elpad\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:55487}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55487/devtoo..., se:cdpVersion: 107.0.5304.121, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 0a431f8b9dfe4bf822e495ec1c32f41e
+	at com.example.AppTest.init(AppTest.java:24)
+Caused by: java.io.UncheckedIOException: java.net.SocketException: Connection reset
+	at com.example.AppTest.init(AppTest.java:24)
+Caused by: java.net.SocketException: Connection reset
+
