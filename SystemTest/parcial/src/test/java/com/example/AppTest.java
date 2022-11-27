@@ -52,5 +52,46 @@ public class AppTest
             fail();
         }
 
+        try{
+
+            WebElement choiceCarro = browser.findElement(By.id("inlineRadio1"));
+            Thread.sleep(500);
+            choiceCarro.click();
+
+            Select opciones= new Select(browser.findElement(By.id("inlineFormCustomSelect")));
+            Thread.sleep(500);
+            opciones.selectByValue("Camioneta");Thread.sleep(500);
+            
+            WebElement placa = browser.findElement(By.id("inputPlaca"));
+            WebElement botonInsert=browser.findElement(By.id("botonInsertar"));
+            Thread.sleep(500);
+            placa.sendKeys("XYZ007");
+            Thread.sleep(500);
+            botonInsert.click();Thread.sleep(500);
+            
+
+            Thread.sleep(500);
+            browser.navigate().refresh();
+            
+
+            /* 
+            WebElement user = browser.findElement(By.id("inputUserName"));
+            WebElement pass = browser.findElement(By.id("inputPassword"));
+            WebElement botonInicio=browser.findElement(By.id("loginBtn"));
+            Thread.sleep(500);
+            user.sendKeys("john");
+            Thread.sleep(500);
+            pass.sendKeys("12345");
+            Thread.sleep(500);
+            botonInicio.click();
+            */
+            browser.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+        }catch (Exception e){
+            fail();
+        }
+        //Thread.sleep(500);
+        //browser.navigate().refresh();
+
+
     }
 }
