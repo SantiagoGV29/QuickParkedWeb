@@ -1,6 +1,10 @@
 # QuickParked Web
 On this proyect we will make a parking software in which our clients could acces from internet
 
+/*EJECUTAR COMO APLICACION*/
+mvn spring-boot:run -D"spring-boot.run.profiles"=devel
+
+
 https://www.youtube.com/watch?v=JaAmMuU6rsc
 
 Login Test Gif:
