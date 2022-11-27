@@ -9,7 +9,7 @@ https://www.youtube.com/watch?v=JaAmMuU6rsc
 
 Login Test Gif:
 
-![test](https://user-images.githubusercontent.com/75964273/204109310-34efcb07-dd07-4345-839c-88b9783c2831.gif)
+![pruebasS](https://user-images.githubusercontent.com/75964273/204164043-c2228477-c79b-4d22-a023-724d8c061147.gif)
 
 
 #ty
